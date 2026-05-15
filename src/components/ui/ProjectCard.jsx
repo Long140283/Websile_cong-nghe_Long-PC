@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Terminal } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
   return (
@@ -27,7 +27,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className="p-3 bg-white text-background rounded-full hover:scale-110 transition-transform"
           >
-            <Github className="w-5 h-5" />
+            <Terminal className="w-5 h-5" />
           </a>
           <a 
             href={project.demo} 

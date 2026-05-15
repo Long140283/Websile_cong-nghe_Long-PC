@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Terminal } from 'lucide-react';
+import { Menu, X, Terminal, Code } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +56,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="p-2 text-slate-400 hover:text-white transition-colors"
           >
-            <Github className="w-5 h-5" />
+            <Terminal className="w-5 h-5" />
           </a>
         </div>
 

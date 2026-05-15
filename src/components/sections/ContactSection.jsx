@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Github, Facebook, MessageCircle, Send, CheckCircle } from 'lucide-react';
+import { Mail, Terminal, Globe, MessageCircle, Send, CheckCircle } from 'lucide-react';
 import { socials } from '../../data';
 
 const ContactSection = () => {
@@ -8,8 +8,8 @@ const ContactSection = () => {
   const [status, setStatus] = useState('idle'); // idle, sending, success
 
   const iconMap = {
-    github: <Github className="w-6 h-6" />,
-    facebook: <Facebook className="w-6 h-6" />,
+    github: <Terminal className="w-6 h-6" />,
+    facebook: <Globe className="w-6 h-6" />,
     'message-circle': <MessageCircle className="w-6 h-6" />,
     mail: <Mail className="w-6 h-6" />,
   };
