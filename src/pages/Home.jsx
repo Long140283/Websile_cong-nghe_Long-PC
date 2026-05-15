@@ -10,27 +10,30 @@ import Footer from '../components/layout/Footer';
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background selection:bg-primary/30 selection:text-white">
-      {/* Navigation */}
-      <Navbar />
+    <div className="relative min-h-screen bg-[#030712] overflow-x-hidden">
+      {/* Dynamic Global Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-highlight/5 rounded-full blur-[100px] animate-float"></div>
+        <div className="absolute top-[40%] left-[20%] w-[20%] h-[20%] bg-accent/5 rounded-full blur-[80px]"></div>
+      </div>
 
-      {/* Main Content */}
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillSection />
-        <ProjectSection />
-        <BlogSection />
-        <ContactSection />
-      </main>
+      <div className="relative z-10">
+        <Navbar />
+        
+        <main>
+          <HeroSection />
+          
+          <div className="space-y-24 pb-24">
+            <AboutSection />
+            <SkillSection />
+            <ProjectSection />
+            <BlogSection />
+            <ContactSection />
+          </div>
+        </main>
 
-      {/* Footer */}
-      <Footer />
-
-      {/* Background Mesh Gradient (Global) */}
-      <div className="fixed inset-0 z-[-1] pointer-events-none opacity-40">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-highlight/10 rounded-full blur-[100px]"></div>
+        <Footer />
       </div>
     </div>
   );

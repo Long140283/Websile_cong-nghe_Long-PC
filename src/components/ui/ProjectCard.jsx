@@ -1,62 +1,70 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Terminal } from 'lucide-react';
+import { ExternalLink, Terminal, ArrowUpRight } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group relative rounded-2xl overflow-hidden glass border border-white/5 hover:border-primary/30 transition-all duration-500"
+      className="group relative bg-slate-900/40 rounded-[32px] border border-white/5 overflow-hidden hover:border-primary/30 transition-all duration-500"
     >
-      {/* Project Image */}
-      <div className="relative h-56 overflow-hidden">
+      {/* Image Container */}
+      <div className="aspect-[16/10] overflow-hidden relative">
         <img 
           src={project.image} 
-          alt={project.title} 
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
         
-        {/* Hover Links Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* Hover Overlay Buttons */}
+        <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
           <a 
             href={project.link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white text-background rounded-full hover:scale-110 transition-transform"
+            className="p-4 bg-primary text-white rounded-2xl hover:scale-110 transition-transform shadow-xl shadow-primary/20"
           >
             <Terminal className="w-5 h-5" />
           </a>
           <a 
             href={project.demo} 
-            className="p-3 bg-primary text-white rounded-full hover:scale-110 transition-transform"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-4 bg-white text-background rounded-2xl hover:scale-110 transition-transform shadow-xl"
           >
-            <ExternalLink className="w-5 h-5" />
+            <ArrowUpRight className="w-5 h-5" />
           </a>
         </div>
       </div>
 
-      {/* Project Info */}
-      <div className="p-6">
-        <h4 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+      {/* Content */}
+      <div className="p-8">
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.tech.map((t, idx) => (
+            <span 
+              key={idx} 
+              className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors flex items-center gap-2">
           {project.title}
+          <div className="w-0 h-0.5 bg-primary group-hover:w-8 transition-all duration-500"></div>
         </h4>
-        <p className="text-slate-400 text-sm mb-6 line-clamp-2">
+        
+        <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">
           {project.description}
         </p>
 
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2">
-          {project.tech.map((tech, idx) => (
-            <span 
-              key={idx} 
-              className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+            <span className="text-xs font-mono text-slate-500">PROJECT_0{project.id}</span>
+            <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
         </div>
       </div>
     </motion.div>

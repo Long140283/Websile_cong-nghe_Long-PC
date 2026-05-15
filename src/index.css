@@ -1,59 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#030712] text-slate-300 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 
-html {
-  scroll-behavior: smooth;
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-primary/40 transition-colors;
+  }
 }
 
-:root {
-  color-scheme: dark;
-}
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-morph {
+    background: radial-gradient(120% 120% at 50% 10%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-body {
-  @apply bg-background text-slate-200 font-sans antialiased selection:bg-primary/30 selection:text-white;
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), 0 0 40px rgba(59, 130, 246, 0.1);
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-bold text-white tracking-tight;
-}
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-highlight to-accent;
+  }
 
-code, pre {
-  @apply font-mono;
-}
+  .animate-slow-spin {
+    animation: spin 20s linear infinite;
+  }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
 
-::-webkit-scrollbar-track {
-  @apply bg-background;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
-}
-
-/* Glassmorphism Utility */
-.glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
-}
-
-/* Neon Glow Utility */
-.neon-blue {
-  @apply shadow-[0_0_15px_rgba(59,130,246,0.5)];
-}
-
-.neon-cyan {
-  @apply shadow-[0_0_15px_rgba(6,182,212,0.5)];
-}
-
-.neon-purple {
-  @apply shadow-[0_0_15px_rgba(139,92,246,0.5)];
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 }
