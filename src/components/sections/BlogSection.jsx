@@ -1,34 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Tag, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { blogs } from '../../data';
 
 const BlogSection = () => {
   return (
     <section id="blog" className="py-24 bg-slate-900/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-mono text-primary uppercase tracking-widest mb-4"
           >
-            Insights
-          </motion.h2>
-          <motion.h3 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            <h2 className="text-sm font-mono text-primary uppercase tracking-widest mb-4">Insights</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-white">Tech <span className="text-accent">Blog</span></h3>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-white"
           >
-            Tech <span className="text-accent">Blog</span>
-          </motion.h3>
+            <Link 
+              to="/blog"
+              className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
+            >
+              <span>View All Articles</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {blogs.map((blog, idx) => (
+          {blogs.slice(0, 3).map((blog, idx) => (
             <motion.div
               key={blog.id}
               initial={{ opacity: 0, y: 20 }}
@@ -56,13 +62,13 @@ const BlogSection = () => {
                 {blog.excerpt}
               </p>
               
-              <a 
-                href={blog.link}
+              <Link 
+                to={`/blog/${blog.id}`}
                 className="flex items-center gap-2 text-white font-bold text-sm group/btn"
               >
                 Read More
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform text-primary" />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
