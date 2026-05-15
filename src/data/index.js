@@ -3,79 +3,99 @@
 export const projects = [
   {
     id: 1,
-    title: "Phần mềm Bệnh viện Python",
-    description: "Hệ thống quản lý bệnh viện toàn diện với tính năng quản lý bệnh nhân, hồ sơ bệnh án và lịch hẹn. Tối ưu hóa quy trình vận hành cho cơ sở y tế.",
+    title: "Hệ thống Quản lý Bệnh viện",
+    description: "Giải pháp quản lý bệnh nhân và hồ sơ bệnh án tự động hóa bằng Python. Tích hợp báo cáo và lịch hẹn thông minh.",
     tech: ["Python", "Tkinter", "SQLite", "ReportLab"],
-    link: "https://github.com",
-    demo: "#",
+    link: "https://github.com/Long140283/hospital-management", // Thay bằng link thật của bạn
+    demo: "https://youtu.be/demo1", // Link video demo hoặc web demo
     image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 2,
     title: "AI Automation Workflow",
-    description: "Tự động hóa quy trình làm việc sử dụng LLMs (Ollama/Claude). Xử lý văn bản, phân loại dữ liệu và trích xuất thông tin tự động.",
-    tech: ["Python", "LangChain", "Ollama", "FastAPI"],
-    link: "https://github.com",
+    description: "Tự động hóa xử lý văn bản và trích xuất dữ liệu sử dụng LLMs. Giảm 80% thời gian xử lý thủ công.",
+    tech: ["Python", "Ollama", "Claude API", "FastAPI"],
+    link: "https://github.com/Long140283/ai-automation",
     demo: "#",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
-    title: "Excel Data Automation Tool",
-    description: "Tool chuyên dụng xử lý các file Excel khổng lồ, làm sạch dữ liệu và tạo báo cáo tự động chỉ với một click.",
-    tech: ["Python", "Pandas", "Openpyxl", "PySide6"],
-    link: "https://github.com",
+    title: "Excel Data Professional Tool",
+    description: "Công cụ xử lý Excel chuyên sâu cho báo cáo tài chính và dữ liệu lớn. Tích hợp Power Query và Python Pandas.",
+    tech: ["Python", "Pandas", "Power Query", "Excel"],
+    link: "https://github.com/Long140283/excel-tool",
     demo: "#",
     image: "https://images.unsplash.com/photo-1543286386-2e671302b191?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 4,
-    title: "Google Sheets & Power Query Integration",
-    description: "Đồng bộ hóa dữ liệu thời gian thực giữa các nền tảng khác nhau và Google Sheets thông qua API chuyên sâu.",
-    tech: ["Power Query", "Google API", "JavaScript", "Excel"],
-    link: "https://github.com",
-    demo: "#",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
 export const blogs = [
   {
     id: 1,
-    title: "Hướng dẫn xây dựng AI Chatbot với Ollama và Python",
-    date: "12 May, 2026",
+    title: "Làm chủ AI Coding với Antigravity",
+    date: "15 May, 2026",
     category: "AI",
-    excerpt: "Làm thế nào để chạy các mô hình ngôn ngữ lớn ngay trên máy tính cá nhân của bạn và tích hợp chúng vào ứng dụng Python.",
-    link: "#"
+    excerpt: "Cách tận dụng AI để tăng tốc độ lập trình gấp 10 lần và xây dựng các dự án phức tạp một mình.",
+    link: "/blog/ai-coding"
   },
   {
     id: 2,
-    title: "Tối ưu hóa báo cáo Excel với Power Query",
-    date: "05 May, 2026",
+    title: "Tự động hóa báo cáo với Python & Power Query",
+    date: "10 May, 2026",
     category: "Automation",
-    excerpt: "Khám phá sức mạnh của Power Query để xử lý hàng triệu dòng dữ liệu trong nháy mắt.",
-    link: "#"
-  },
-  {
-    id: 3,
-    title: "Tương lai của Coding với Claude Code",
-    date: "28 April, 2026",
-    category: "Coding",
-    excerpt: "AI đang thay đổi cách chúng ta viết code như thế nào? Trải nghiệm thực tế với Claude Code.",
-    link: "#"
+    excerpt: "Hướng dẫn chi tiết cách kết nối các nguồn dữ liệu phân tán và tạo báo cáo Dashboard tự động.",
+    link: "/blog/automation-guide"
   }
 ];
 
 export const skills = [
-  { name: "Python", level: 90, category: "Language" },
-  { name: "React", level: 85, category: "Frontend" },
-  { name: "AI Automation", level: 80, category: "AI" },
-  { name: "Power Query", level: 95, category: "Data" }
+  { name: "Python", level: 95, category: "Core Languages" },
+  { name: "AI Automation", level: 90, category: "AI & Automation" },
+  { name: "Power Query", level: 95, category: "Data & Workflow" },
+  { name: "ReactJS", level: 85, category: "Frontend & UI" },
+  { name: "Google Sheets API", level: 90, category: "AI & Automation" }
 ];
 
 export const socials = [
-  { name: "GitHub", url: "https://github.com", icon: "github" },
-  { name: "Facebook", url: "https://facebook.com", icon: "facebook" },
-  { name: "Zalo", url: "https://zalo.me", icon: "message-circle" },
-  { name: "Email", url: "mailto:your@email.com", icon: "mail" }
+  { 
+    name: "GitHub", 
+    url: "https://github.com/Long140283", 
+    icon: "github",
+    description: "Mã nguồn các dự án"
+  },
+  { 
+    name: "Facebook", 
+    url: "https://www.facebook.com/profile.php?id=YOUR_ID", // Hãy thay ID của bạn vào đây
+    icon: "facebook",
+    description: "Kết nối cá nhân"
+  },
+  { 
+    name: "Zalo", 
+    url: "https://zalo.me/YOUR_PHONE", // Hãy thay số điện thoại vào đây
+    icon: "message-circle",
+    description: "Trao đổi công việc"
+  },
+  { 
+    name: "Email", 
+    url: "mailto:your-email@example.com", 
+    icon: "mail",
+    description: "Gửi thư trực tiếp"
+  }
+];
+
+// Thêm mục Downloads cho các tài liệu hoặc Tool
+export const downloads = [
+  {
+    title: "Curriculum Vitae (CV)",
+    type: "PDF",
+    url: "/downloads/Long_CV.pdf",
+    description: "Hồ sơ năng lực chi tiết"
+  },
+  {
+    title: "Excel Automation Tool",
+    type: "EXE",
+    url: "/downloads/tool-excel.zip",
+    description: "Bản dùng thử công cụ xử lý Excel"
+  }
 ];
