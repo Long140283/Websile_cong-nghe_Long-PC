@@ -37,7 +37,30 @@ export const blogs = [
     date: "15 May, 2026",
     category: "AI",
     excerpt: "Cách tận dụng AI để tăng tốc độ lập trình gấp 10 lần và xây dựng các dự án phức tạp một mình.",
-    link: "/blog/ai-coding"
+    link: "/blog/1",
+    content: `
+# Cách tôi xây dựng Portfolio này trong vài giờ
+
+Sử dụng AI như **Antigravity** không chỉ là việc nhờ nó viết code, mà là sự phối hợp giữa tư duy con người và tốc độ của máy tính.
+
+## Tại sao nên dùng AI để lập trình?
+- **Tốc độ**: Xử lý các tác vụ lặp đi lặp lại trong giây lát.
+- **Sáng tạo**: Gợi ý các thư viện và phong cách thiết kế hiện đại.
+- **Học tập**: Bạn có thể học cách code chuẩn thông qua các đoạn mã AI tạo ra.
+
+### Mã nguồn mẫu
+Dưới đây là cách chúng ta khởi tạo một hiệu ứng đánh chữ trong React:
+
+\`\`\`javascript
+const typingEffect = (text) => {
+  console.log("Đang đánh chữ: " + text);
+};
+\`\`\`
+
+> "AI sẽ không thay thế lập trình viên, nhưng lập trình viên biết dùng AI sẽ thay thế những người không biết."
+
+Hãy bắt đầu dự án của bạn ngay hôm nay!
+    `
   },
   {
     id: 2,
